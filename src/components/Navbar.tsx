@@ -30,7 +30,7 @@ const companyMenuItems: {
   {
     title: 'Why Choose Us',
     description: 'Dedicated engineers, transparent communication, and delivery that stays on schedule.',
-    href: '/why-choose-us',
+    href: '/why-choose-us/index.html',
     icon: Star,
     iconClass: 'company-menu-item__icon--primary',
   },
@@ -44,14 +44,14 @@ const companyMenuItems: {
   {
     title: 'Terms of Service',
     description: 'The rules and agreements that guide how we work together.',
-    href: '/terms-of-service',
+    href: '/terms-of-service/index.html',
     icon: FileText,
     iconClass: 'company-menu-item__icon--primary',
   },
   {
     title: 'Blog / Insights',
     description: 'Articles on software, AI automation, and building products that scale.',
-    href: '/blog',
+    href: '/blog/index.html',
     icon: Newspaper,
     iconClass: 'company-menu-item__icon--warning',
   },

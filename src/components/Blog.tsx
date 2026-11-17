@@ -307,7 +307,7 @@ const ArticlePage: React.FC<{ post: BlogPost }> = ({ post }) => {
     <div className="blog-page blog-article-page">
       <div className="blog-container blog-article">
         <nav className="blog-breadcrumb" aria-label="Breadcrumb">
-          <a href="/blog">Blog</a>
+          <a href="/blog/index.html">Blog</a>
           <span aria-hidden="true">›</span>
           <span aria-current="page">Article</span>
         </nav>
@@ -375,7 +375,7 @@ const ArticlePage: React.FC<{ post: BlogPost }> = ({ post }) => {
           </section>
         )}
 
-        <a className="blog-back-link" href="/blog">
+        <a className="blog-back-link" href="/blog/index.html">
           <ArrowRight aria-hidden="true" />
           Back to Insights
         </a>
@@ -389,7 +389,7 @@ const ArticlePage: React.FC<{ post: BlogPost }> = ({ post }) => {
 const ArticleNotFound: React.FC = () => (
   <div className="blog-container blog-not-found">
     <h1>Article not found</h1>
-    <a href="/blog">Back to Insights</a>
+    <a href="/blog/index.html">Back to Insights</a>
   </div>
 );
 

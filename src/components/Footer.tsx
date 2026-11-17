@@ -89,12 +89,12 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="/why-choose-us" className="hover:text-slate-900 transition-colors">
+                <a href="/why-choose-us/index.html" className="hover:text-slate-900 transition-colors">
                   Why Choose Us
                 </a>
               </li>
               <li>
-                <a href="/blog" className="hover:text-slate-900 transition-colors">
+                <a href="/blog/index.html" className="hover:text-slate-900 transition-colors">
                   Blogs / Insights
                 </a>
               </li>
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="/terms-of-service" className="hover:text-slate-900 transition-colors">
+                <a href="/terms-of-service/index.html" className="hover:text-slate-900 transition-colors">
                   Terms of Service
                 </a>
               </li>
