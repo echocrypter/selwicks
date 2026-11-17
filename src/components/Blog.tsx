@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { blogCategories, blogPosts, type BlogBodyBlock, type BlogPost } from '../content/blogPosts';
 import { SITE_ORIGIN } from '../config/site';
+import { normalizePathname } from '../utils/normalizePathname';
 import { ContactCTA } from './ContactCTA';
 import './Blog.css';
 
@@ -307,7 +308,7 @@ const ArticlePage: React.FC<{ post: BlogPost }> = ({ post }) => {
     <div className="blog-page blog-article-page">
       <div className="blog-container blog-article">
         <nav className="blog-breadcrumb" aria-label="Breadcrumb">
-          <a href="/blog/index.html">Blog</a>
+          <a href="/blog">Blog</a>
           <span aria-hidden="true">›</span>
           <span aria-current="page">Article</span>
         </nav>
@@ -375,7 +376,7 @@ const ArticlePage: React.FC<{ post: BlogPost }> = ({ post }) => {
           </section>
         )}
 
-        <a className="blog-back-link" href="/blog/index.html">
+        <a className="blog-back-link" href="/blog">
           <ArrowRight aria-hidden="true" />
           Back to Insights
         </a>
@@ -389,13 +390,13 @@ const ArticlePage: React.FC<{ post: BlogPost }> = ({ post }) => {
 const ArticleNotFound: React.FC = () => (
   <div className="blog-container blog-not-found">
     <h1>Article not found</h1>
-    <a href="/blog/index.html">Back to Insights</a>
+    <a href="/blog">Back to Insights</a>
   </div>
 );
 
 export const Blog: React.FC = () => {
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-  const isListing = pathname === '/blog' || pathname === '/blog/index.html';
+  const pathname = normalizePathname(window.location.pathname);
+  const isListing = pathname === '/blog';
   if (isListing) return <BlogListing />;
 
   const slug = pathname.split('/').pop();

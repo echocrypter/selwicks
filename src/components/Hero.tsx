@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href="/projects.html"
+                href="/projects"
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-palette-navy-800/80 hover:bg-palette-navy-900/90 text-white font-label-lg text-label-lg backdrop-blur-md border border-white/30 transition-all duration-200 shadow-md hover:-translate-y-0.5"
               >
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />

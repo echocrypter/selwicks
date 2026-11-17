@@ -14,19 +14,16 @@ import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfService } from './components/TermsOfService';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { Blog } from './components/Blog';
+import { normalizePathname } from './utils/normalizePathname';
 
 export function App() {
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-  const isProjectsPage = pathname.endsWith('/projects.html');
-  const isAboutPage = pathname.endsWith('/about.html');
-  const isPrivacyPolicyPage = pathname.endsWith('/privacy-policy.html');
-  const isTermsOfServicePage = pathname === '/terms-of-service'
-    || pathname === '/terms-of-service/index.html';
-  const isWhyChooseUsPage = pathname === '/why-choose-us'
-    || pathname === '/why-choose-us/index.html';
-  const isBlogPage = pathname === '/blog'
-    || pathname === '/blog/index.html'
-    || pathname.startsWith('/blog/');
+  const pathname = normalizePathname(window.location.pathname);
+  const isProjectsPage = pathname === '/projects';
+  const isAboutPage = pathname === '/about';
+  const isPrivacyPolicyPage = pathname === '/privacy-policy';
+  const isTermsOfServicePage = pathname === '/terms-of-service';
+  const isWhyChooseUsPage = pathname === '/why-choose-us';
+  const isBlogPage = pathname === '/blog' || pathname.startsWith('/blog/');
 
   useEffect(() => {
     const sectionId = window.location.hash.slice(1);

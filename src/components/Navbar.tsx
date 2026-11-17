@@ -11,6 +11,7 @@ import {
   X,
   type LucideIcon,
 } from 'lucide-react';
+import { normalizePathname } from '../utils/normalizePathname';
 import './Navbar.css';
 
 const companyMenuItems: {
@@ -23,35 +24,35 @@ const companyMenuItems: {
   {
     title: 'About Us',
     description: 'Meet the team behind Selwicks and the story of how we build software, apps, and automations.',
-    href: '/about.html',
+    href: '/about',
     icon: Building2,
     iconClass: 'company-menu-item__icon--success',
   },
   {
     title: 'Why Choose Us',
     description: 'Dedicated engineers, transparent communication, and delivery that stays on schedule.',
-    href: '/why-choose-us/index.html',
+    href: '/why-choose-us',
     icon: Star,
     iconClass: 'company-menu-item__icon--primary',
   },
   {
     title: 'Privacy Policy',
     description: 'How we collect, use, and protect your data.',
-    href: '/privacy-policy.html',
+    href: '/privacy-policy',
     icon: ShieldCheck,
     iconClass: 'company-menu-item__icon--primary',
   },
   {
     title: 'Terms of Service',
     description: 'The rules and agreements that guide how we work together.',
-    href: '/terms-of-service/index.html',
+    href: '/terms-of-service',
     icon: FileText,
     iconClass: 'company-menu-item__icon--primary',
   },
   {
     title: 'Blog / Insights',
     description: 'Articles on software, AI automation, and building products that scale.',
-    href: '/blog/index.html',
+    href: '/blog',
     icon: Newspaper,
     iconClass: 'company-menu-item__icon--warning',
   },
@@ -62,8 +63,9 @@ const scheduleCallUrl = 'https://wa.me/923265933029';
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
-  const isProjectsPage = window.location.pathname.endsWith('/projects.html');
-  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  const pathname = normalizePathname(window.location.pathname);
+  const isProjectsPage = pathname === '/projects';
+  const isHomePage = pathname === '/';
   const sectionHref = (section: string) => `${isHomePage ? '' : '/'}#${section}`;
   const desktopCompanyButtonRef = useRef<HTMLButtonElement>(null);
   const mobileCompanyButtonRef = useRef<HTMLButtonElement>(null);
@@ -182,7 +184,7 @@ export const Navbar: React.FC = () => {
               Technologies
             </a>
             <a
-              href="/projects.html"
+              href="/projects"
               aria-current={isProjectsPage ? 'page' : undefined}
               className={`px-4 py-2 rounded-full font-label-md text-label-md transition-all duration-200 font-medium ${
                 isProjectsPage
@@ -290,7 +292,7 @@ export const Navbar: React.FC = () => {
               Technologies
             </a>
             <a
-              href="/projects.html"
+              href="/projects"
               onClick={closeMenus}
               aria-current={isProjectsPage ? 'page' : undefined}
               className={`px-4 py-2.5 rounded-xl font-label-md transition-colors ${

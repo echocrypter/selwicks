@@ -1,8 +1,9 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
+import { normalizePathname } from '../utils/normalizePathname';
 
 export const Footer: React.FC = () => {
-  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  const isHomePage = normalizePathname(window.location.pathname) === '/';
   const sectionHref = (section: string) => `${isHomePage ? '' : '/'}#${section}`;
 
   return (
@@ -84,27 +85,27 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-slate-600">
               <li>
-                <a href="/about.html" className="hover:text-slate-900 transition-colors">
+                <a href="/about" className="hover:text-slate-900 transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/why-choose-us/index.html" className="hover:text-slate-900 transition-colors">
+                <a href="/why-choose-us" className="hover:text-slate-900 transition-colors">
                   Why Choose Us
                 </a>
               </li>
               <li>
-                <a href="/blog/index.html" className="hover:text-slate-900 transition-colors">
+                <a href="/blog" className="hover:text-slate-900 transition-colors">
                   Blogs / Insights
                 </a>
               </li>
               <li>
-                <a href="/privacy-policy.html" className="hover:text-slate-900 transition-colors">
+                <a href="/privacy-policy" className="hover:text-slate-900 transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms-of-service/index.html" className="hover:text-slate-900 transition-colors">
+                <a href="/terms-of-service" className="hover:text-slate-900 transition-colors">
                   Terms of Service
                 </a>
               </li>

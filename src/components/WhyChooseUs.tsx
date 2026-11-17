@@ -116,7 +116,7 @@ export const WhyChooseUs: React.FC = () => {
               Schedule a Call
             </a>
             <a
-              href="/projects.html"
+              href="/projects"
               className="why-secondary-button"
             >
               See Our Projects
